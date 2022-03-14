@@ -8,8 +8,6 @@ body {
 }
 #root {
     margin: 2rem auto;
-    display: flex;
-    flex-direction: column;
 }
 
 .add-todo {
@@ -19,9 +17,22 @@ body {
     gap: 1rem;
 }
 
+.add-todo input {
+    border: 1px solid black;
+    border-radius: 7px;
+    line-height: 2rem;
+    width: 250px;
+    min-width: 150px;
+}
+
+.add-todo button {
+    padding: .5rem .8rem;
+    cursor: pointer;
+}
+
 .content-todo {
     margin: 2rem auto;
-    width: 500px;
+    max-width: 600px;
     background-color: #f5f7f7;
     border-radius: 20px;
 }
@@ -29,13 +40,11 @@ body {
 ul {
     list-style: none;
     padding: 1rem;
-
 }
 
 li {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     line-height: 2.5rem;
     border-bottom: 1px solid rgba(0, 0, 0, .2);
     cursor: pointer;

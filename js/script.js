@@ -1,7 +1,8 @@
 const app = new Vue({
     el: '#root',
     data: {
-        newTodo: {
+        strNewTodo:'',
+        newTodoObj: {
             text: '',
             done: false
         },
@@ -23,10 +24,14 @@ const app = new Vue({
     },
     methods: {
         addNewTodo() {
-            this.todos.push(this.newTodo)
-            this.newTodo = {
-                text: '',
-                done: false
+            if (this.strNewTodo.trim() != '') {
+                this.newTodoObj.text = this.strNewTodo.trim()
+                this.todos.unshift(this.newTodoObj)
+                this.newTodoObj = {
+                    text: '',
+                    done: false
+                }
+                this.strNewTodo = ''
             }
         },
         deleteTodo(index) {
