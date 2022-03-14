@@ -17,8 +17,8 @@
 
         <div class="content-todo">
             <ul>
-                <li @click="doneChange(index)" v-for="(todo, index) in todos">
-                    <div :class="todo.done ? 'done-active' : ''">{{ todo.text }}</div>
+                <li v-for="(todo, index) in todos">
+                    <div @click="doneChange(index)" class="testo" :class="todo.done ? 'done-active' : ''">{{ todo.text }}</div>
                     <div class="closed">
                         <button @click="deleteTodo(index)">X</button>
                     </div>

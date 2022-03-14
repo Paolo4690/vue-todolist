@@ -30,6 +30,10 @@ body {
     cursor: pointer;
 }
 
+.testo {
+    flex: 1 1 auto;
+}
+
 .content-todo {
     margin: 2rem auto;
     max-width: 600px;
