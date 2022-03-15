@@ -11,7 +11,7 @@
     
     <div id="root">
         <div class="add-todo">
-            <input placeholder="Aggiungi Todo" @keyup.enter="addNewTodo" v-model="newTodoObj.text" type="text" name="new-todo" id="new-todo">
+            <input placeholder="Aggiungi Todo" @keyup.enter="addNewTodo" v-model.trim="newTodoObj.text" type="text" name="new-todo" id="new-todo">
             <button @click="addNewTodo">Aggiungi</button>
         </div>
 
