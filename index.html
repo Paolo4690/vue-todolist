@@ -11,14 +11,14 @@
     
     <div id="root">
         <div class="add-todo">
-            <input @keyup.enter="addNewTodo" v-model="strNewTodo" type="text" name="new-todo" id="new-todo">
+            <input placeholder="Aggiungi Todo" @keyup.enter="addNewTodo" v-model="newTodoObj.text" type="text" name="new-todo" id="new-todo">
             <button @click="addNewTodo">Aggiungi</button>
         </div>
 
         <div class="content-todo">
             <ul>
                 <li v-for="(todo, index) in todos">
-                    <div @click="doneChange(index)" class="testo" :class="todo.done ? 'done-active' : ''">{{ todo.text }}</div>
+                    <div @click="doneChange(index)" class="testo" :class="{'done-active' : todo.done}">{{ todo.text }}</div>
                     <div class="closed">
                         <button @click="deleteTodo(index)">X</button>
                     </div>
@@ -35,3 +35,4 @@
 </body>
 </html>
 
+<!-- {'done-active' : todo.done} == todo.done ? 'done-active' : '' -->

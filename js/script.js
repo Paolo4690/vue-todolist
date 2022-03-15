@@ -1,12 +1,10 @@
 const app = new Vue({
     el: '#root',
     data: {
-        strNewTodo:'',
         newTodoObj: {
             text: '',
             done: false
         },
-        counterIndex: 0,
         todos: [
             {
                 text: 'fare i compiti',
@@ -24,14 +22,9 @@ const app = new Vue({
     },
     methods: {
         addNewTodo() {
-            if (this.strNewTodo.trim() != '') {
-                this.newTodoObj.text = this.strNewTodo.trim()
-                this.todos.unshift(this.newTodoObj)
-                this.newTodoObj = {
-                    text: '',
-                    done: false
-                }
-                this.strNewTodo = ''
+            if (this.newTodoObj.text != '') {
+                this.todos.unshift({...this.newTodoObj})
+                this.newTodoObj.text = ''
             }
         },
         deleteTodo(index) {
